@@ -104,12 +104,12 @@ async function sendTelegramMessage(token, chatId, message) {
 
     // 统计信息
     report += `\n📊 统计信息:\n`;
-    report += `总账号数: ${accounts.length}\n`;
-    report += `成功账号数: ${successAccounts.length} ✅\n`;
-    report += `失败账号数: ${failedAccounts.length} ❌\n`;
+    report += `∑ 总账号数: ${accounts.length}\n`;
+    report += `✅成功: ${successAccounts.length}\n`;
+    report += `❌失败: ${failedAccounts.length}\n`;
 
     if (failedAccounts.length > 0) {
-        report += `失败的账号是：${failedAccounts.join(', ')}\n`;
+        report += `❌失败的账号是：${failedAccounts.join(', ')}\n`;
     }
 
     // 发送报告到Telegram

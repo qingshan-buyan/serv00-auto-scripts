@@ -42,7 +42,10 @@ async function sendTelegramMessage(token, chatId, message) {
         const { username, password, panel } = account;
 
         // 显示浏览器窗口&使用自定义窗口大小
-        const browser = await puppeteer.launch({ headless: false });
+       const browser = await puppeteer.launch({
+    headless: false, // 可选，控制是否以无头模式运行
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+});
         const page = await browser.newPage();
 
         let url = `https://${panel}/login/?next=/`;
